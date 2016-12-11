@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <extension key="com.joineryhq.extquicksearch" type="module">
   <file>extquicksearch</file>
-  <name>Extended Quicksearch</name>
-  <description>Extends quicksearch to include a configurable collection of custom fields.</description>
+  <name>Extended Quick Search</name>
+  <description>Extends Quick Search to include a configurable collection of custom fields.</description>
   <license>GPL-3.0</license>
   <maintainer>
     <author>Allen Shaw</author>
