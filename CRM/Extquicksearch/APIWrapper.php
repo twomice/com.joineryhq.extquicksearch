@@ -13,23 +13,17 @@ class CRM_Extquicksearch_APIWrapper {
    */
   public function toApiOutput($apiRequest, $result) {
     $values = $result['values'];
-    dsm($values, 'values on ' . __LINE__);
     
     $search_context = $apiRequest['params']['field_name'] ?: 'default';
     $fields = _extquicksearch_get_search_config();
-    dsm($fields, '$fields');
     foreach ($fields as $field_id => $contexts) {
       if (in_array($search_context, $contexts)) {
         self::appendResultValues($field_id, $apiRequest['params']['name'], $values);
       }
     }
-    dsm($values, 'values on ' . __LINE__);
     self::removeDuplicateValues($values);
-    dsm($values, 'values on ' . __LINE__);
     self::sortValues($values);
-    dsm($values, 'values on ' . __LINE__);
     self::limitValues($values);
-    dsm($values, 'values on ' . __LINE__);
 
     $result['values'] = $values;
     $result['count'] = count($values);
@@ -45,9 +39,7 @@ class CRM_Extquicksearch_APIWrapper {
   }
 
   private static function limitValues(&$values) {
-    dsm(__FUNCTION__);
     $search_autocomplete_count = CRM_Core_BAO_Setting::getItem(NULL, 'search_autocomplete_count');
-    dsm($search_autocomplete_count, '$search_autocomplete_count');
     $values = array_slice($values, 0, $search_autocomplete_count);
   }
 
