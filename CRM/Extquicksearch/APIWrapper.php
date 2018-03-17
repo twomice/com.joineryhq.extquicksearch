@@ -69,7 +69,7 @@ class CRM_Extquicksearch_APIWrapper {
 
     // Fetch data for contacts who match on this custom field.
     $api_params = array(
-      'custom_' . $field_id => array('LIKE' => '%'. $search_string .'%'),
+      'custom_' . $field_id => array('LIKE' => '%' . $search_string . '%'),
       'sequential' => 1,
       'return' => $setOptionColumns,
     );
@@ -102,14 +102,14 @@ class CRM_Extquicksearch_APIWrapper {
 
   /**
    * If so configured, append the current employer for each returned contact.
-   * @param Array $values The result values that will be returned by the API.
+   * @param array $values The result values that will be returned by the API.
    */
   private static function appendCurrentEmployerData(&$values) {
     if (Civi::settings()->get('extquicksearch_is_quicksearch_current_employer')) {
       foreach ($values as &$value) {
         $contact = civicrm_api3('Contact', 'getSingle', array(
           'id' => $value['id'],
-          'return' => array('current_employer')
+          'return' => array('current_employer'),
         ));
         $value['data'] .= ' :: ' . CRM_Utils_Array::value('current_employer', $contact);
       }
