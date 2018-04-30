@@ -111,7 +111,10 @@ class CRM_Extquicksearch_APIWrapper {
           'id' => $value['id'],
           'return' => array('current_employer'),
         ));
-        $value['data'] .= ' :: ' . CRM_Utils_Array::value('current_employer', $contact);
+        $currentEmployer = CRM_Utils_Array::value('current_employer', $contact);
+        if ($currentEmployer) {
+          $value['data'] .= " :: $currentEmployer";
+        }
       }
     }
   }
