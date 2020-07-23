@@ -2,7 +2,6 @@
 
 require_once 'extquicksearch.civix.php';
 
-
 function extquicksearch_civicrm_apiWrappers(&$wrappers, $apiRequest) {
   if (strtolower($apiRequest['entity']) == 'contact' && strtolower($apiRequest['action']) == 'getquick') {
     $wrappers[] = new CRM_Extquicksearch_APIWrapper();
