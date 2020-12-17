@@ -1,5 +1,7 @@
 <?php
 
+use CRM_Extquicksearch_ExtensionUtil as E;
+
 return array(
   'extquicksearch_is_quicksearch_current_employer' => array(
     'group_name' => 'Extquicksearch Settings',
