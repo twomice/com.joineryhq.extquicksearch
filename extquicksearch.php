@@ -2,7 +2,6 @@
 
 require_once 'extquicksearch.civix.php';
 
-
 function extquicksearch_civicrm_apiWrappers(&$wrappers, $apiRequest) {
   if (strtolower($apiRequest['entity']) == 'contact' && strtolower($apiRequest['action']) == 'getquick') {
     $wrappers[] = new CRM_Extquicksearch_APIWrapper();
@@ -77,6 +76,15 @@ function extquicksearch_civicrm_xmlMenu(&$files) {
  */
 function extquicksearch_civicrm_install() {
   _extquicksearch_civix_civicrm_install();
+}
+
+/**
+ * Implements hook_civicrm_postInstall().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postInstall
+ */
+function extquicksearch_civicrm_postInstall() {
+  _extquicksearch_civix_civicrm_postInstall();
 }
 
 /**

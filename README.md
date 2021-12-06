@@ -1,11 +1,18 @@
 # CiviCRM: Extended Quick Search
 
-Extends Quick Search to include a configurable collection of custom fields.
+1. QuickSearch matching: Extends Quick Search to match on a configurable collection of custom fields.
+2. Current Employer display: Provides options for adding Current Employer as a visible field on results in Quick Search and Contact Reference fields.
 
-## Limitations
+## Usage
+1. QuickSearch matching: see [QuickSearch matching](#quicksearch-matching) below for important notes on limitations and configuration.
+2. Current Employer display: Navigate to _Administer > Customize Data and Screens > Search Preferences_, and there find the settings "Autocomplete Contact Search" (for Quick Search) and "Contact Reference Options" (for contact reference fields). In either or both of these settings, enable the "Current Employer" option. Save settings. Current Employer will now be included in user-visible results on the relevant features.
+
+## QuickSearch matching
+
+### Limitations
 Only custom fields attached to contacts are supported.
 
-## Configuration
+### Configuration
 A configuration GUI is planned, but for the time being, configuration is achieved
 by adding lines like these to civicrm.settings.php:
 
@@ -36,7 +43,7 @@ the meaning shown here:
 With this configuration, the custom field N will be included when searching the
 specified Quick Search criterion.
 
-### Example
+#### Example
 An example CiviCRM installation has a custom field labeled "Superhero Codename",
 which is custom field ID 40.
 
