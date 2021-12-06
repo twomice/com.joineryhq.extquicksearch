@@ -18,7 +18,7 @@ $civicrm_setting['com.joineryhq.extquicksearch']['search_config'] = array(
 );
 ```
 
-* N: An integer indicating the sytem ID of a custom field
+* N: An integer indicating the system ID of a custom field
 * CRITERION: Any one or more of the following Quick Search criteria, which have
 the meaning shown here:
   * 'default': Name/Email
