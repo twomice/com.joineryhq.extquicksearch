@@ -160,5 +160,12 @@ function extquicksearch_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
 }
 
 function _extquicksearch_get_search_config() {
-  return CRM_Core_BAO_Setting::getItem('com.joineryhq.extquicksearch', 'search_config');
+  $config = CRM_Core_BAO_Setting::getItem('com.joineryhq.extquicksearch', 'search_config');
+  foreach ($config as $fieldId => &$fieldCriteria) {
+    if (in_array('default', $fieldCriteria)) {
+      // Newer civicrm versions use 'sort_name' instead of 'default'.
+      $fieldCriteria[] = 'sort_name';
+    }
+  }
+  return $config;
 }

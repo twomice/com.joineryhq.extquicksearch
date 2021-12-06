@@ -28,7 +28,7 @@ $civicrm_setting['com.joineryhq.extquicksearch']['search_config'] = array(
 * N: An integer indicating the system ID of a custom field
 * CRITERION: Any one or more of the following Quick Search criteria, which have
 the meaning shown here:
-  * 'default': Name/Email
+  * 'sort_name': Name/Email
   * 'contact_id': Contact ID
   * 'external_identifier': External ID
   * 'first_name': First Name
@@ -59,7 +59,7 @@ We then enable the extension, and specify the following configuration:
 global $civicrm_setting;
 $civicrm_setting['com.joineryhq.extquicksearch']['search_config'] = array(
   40 => array(
-    'default'
+    'sort_name'
   ),
 );
 ```
