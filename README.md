@@ -71,3 +71,9 @@ Holberman, Jane :: janeh@example.org
 Smith, Herman :: hermans@example.com
 Wayne, Bruce :: bat@superheros.example.com
 ```
+
+## Support
+
+Support for this package is handled under Joinery's ["As-Is Support" policy](https://joineryhq.com/software-support-levels#as-is-support).
+
+Public issue queue for this package: https://github.com/twomice/com.joineryhq.extquicksearch/issues
